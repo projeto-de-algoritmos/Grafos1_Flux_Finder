@@ -16,8 +16,8 @@ Descreva os objetivos do seu projeto e como ele funciona.
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: Python<br>
-**Framework**: Flask<br>
+**Linguagem**: C#<br>
+**Framework**: Flutter<br>
 Para executar o projeto, rode pip install flask no terminal.
 
 ## Uso 

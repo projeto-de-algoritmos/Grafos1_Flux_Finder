@@ -18,10 +18,14 @@ namespace API.Services
             this._dataBase = dataBase;
         }
 
-        public void GetTopologia()
+        public void GetTopologia(List<int> materiasRealizadas)
         {
             //Montagem da Lista de Adjacencias e da lista de Adjacencias reversa.    
             GenerateLISTAS(_dataBase);
+            //Retirando do grafo todas as materias que o estudante ja realizou
+            if (materiasRealizadas.Count != 0){
+                MateriasRealizadas(materiasRealizadas);
+            }
         }
     
     
@@ -50,5 +54,19 @@ namespace API.Services
                 }
             } 
         }
-    }
+    
+
+        private void MateriasRealizadas(List<int> materiasRealizadas) 
+            {
+                foreach(var idMateria in materiasRealizadas){
+                        var listaAdjacenciaNo = this.listaAdjacencias[idMateria - 1];
+                            
+                        foreach (int disciplinaId in listaAdjacenciaNo){
+                            var result = -- this.listaAdjacenciasReversa[disciplinaId - 1];
+                            if (result== 0)
+                                this.S.Enqueue(disciplinaId);
+                        }
+                    }
+            }
 }
+    }

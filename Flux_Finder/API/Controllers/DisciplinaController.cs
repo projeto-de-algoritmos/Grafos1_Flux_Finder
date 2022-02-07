@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-        [Route("/disciplinas")]
         public class DisciplinaController:ControllerBase
         {
             private readonly DisciplinaService _disciplinaService;

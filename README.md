@@ -16,17 +16,19 @@ por ele , um plano de disciplinas que se seguidas o aluno poderá se formar
 ## Screenshots
 ![Capturar](https://user-images.githubusercontent.com/54318472/152889071-14ff58e7-6a2f-48fb-a9dc-ada53d26ea95.PNG)
 
+![Capturar2](https://user-images.githubusercontent.com/54318472/152889221-afd54265-65d3-4576-b10b-5da5981fd2c1.PNG)
+
+![Captura de tela 2022-02-07 201810](https://user-images.githubusercontent.com/54318472/152889280-265dfa41-d6f2-4a4a-9dd4-c3343f59df43.jpg)
+
+
 
 ## Instalação 
 **Linguagem**: C#<br>
-**Framework**: Flutter<br>
-Para executar o projeto, rode pip install flask no terminal.
+**Framework**: AspNet Core<br>
+Para rodar esse projeto baixe a plataforma dotnet em sua maquina, clone-o a partir do githbub , e na pasta API execute o comando dotnet run.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Utilize de query strings para informar para o sistema os id's das materias que o aluno ja realizou
 
 
 

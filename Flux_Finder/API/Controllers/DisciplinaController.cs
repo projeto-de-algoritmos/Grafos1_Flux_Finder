@@ -18,8 +18,8 @@ namespace API.Controllers
             [HttpGet]
             //A lista materiasRealizadas precisa estar ordenada
             public IActionResult GetTopologia([FromQuery] List<int> materiasRealizadas){
-                this._disciplinaService.GetTopologia(materiasRealizadas);
-                return Ok();
+                var result =this._disciplinaService.GetTopologia(materiasRealizadas);
+                return Ok(result);
             }
 
          

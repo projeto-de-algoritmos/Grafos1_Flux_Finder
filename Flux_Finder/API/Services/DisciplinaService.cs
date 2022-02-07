@@ -18,7 +18,7 @@ namespace API.Services
             this._dataBase = dataBase;
         }
 
-        public void GetTopologia(List<int> materiasRealizadas)
+        public string GetTopologia(List<int> materiasRealizadas)
         {
             //Montagem da Lista de Adjacencias e da lista de Adjacencias reversa.    
             GenerateLISTAS(_dataBase);
@@ -26,6 +26,8 @@ namespace API.Services
             if (materiasRealizadas.Count != 0){
                 MateriasRealizadas(materiasRealizadas);
             }
+            //Montagem da Ordenacao topologica.    
+            return GenerateTopologiaGeral(this.listaAdjacencias.Count,materiasRealizadas);
         }
     
     
@@ -68,5 +70,33 @@ namespace API.Services
                         }
                     }
             }
-}
+
+        private string GenerateTopologiaGeral(int tamanhoGrafo,List<int> materiasRealizadas)
+        {
+            //Gerar a topologia geral das disciplinas restantes
+            
+            string ordenacaoTopologica = "";
+            for(int i=0; i < tamanhoGrafo; i++){
+                
+                //Pegar e retirar o v da fila S
+                var v = this.S.Dequeue();
+                //Se essa materia estava nas realizadas ela ja foi retirada do grafo
+                if(materiasRealizadas.Contains(v))
+                    continue;
+
+                ordenacaoTopologica += $"{v.ToString()}, ";//Insercao do no na ordenacao topologica
+
+                //Ir na lista de adjacencias , na posicao do nó, e diminuir na lista reversa todos os nós com que ele tem aresta no DAF
+                var listaAdjacenciaNo = this.listaAdjacencias[v - 1];
+
+                foreach (int disciplinaId in listaAdjacenciaNo){
+                    var result = -- this.listaAdjacenciasReversa[disciplinaId - 1];
+                    if (result== 0)
+                        this.S.Enqueue(disciplinaId);
+                }
+            }
+            return ordenacaoTopologica;
+        }
+
     }
+}

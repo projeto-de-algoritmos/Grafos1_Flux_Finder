@@ -10,10 +10,12 @@
 | 15/0142536  |  Murilo Schiler Lopes Santana |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Sistema que implementaria a funcionalidade de se retornar para o aluno , dada as matérias já realizadas
+por ele , um plano de disciplinas que se seguidas o aluno poderá se formar
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![Capturar](https://user-images.githubusercontent.com/54318472/152889071-14ff58e7-6a2f-48fb-a9dc-ada53d26ea95.PNG)
+
 
 ## Instalação 
 **Linguagem**: C#<br>
